@@ -9,8 +9,8 @@ client.connect()
     .then(() => {
         console.log('DB connected successfully!');
     });
-const dB = client.db('Movies');         // Name of database
-const moviesDB = dB.collection('movies');   // Name of collection
+const dB = client.db('local');         // Name of database
+const moviesDB = dB.collection('startup_log');   // Name of collection
 // ---------------- ADD the database!!!...
 
 app.engine('hbs', hbs.engine({
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/movies', async (req, res) => {
-    let movies = await moviesDB.find().toArray();
+    let movies = await moviesDB.find();
     res.json(movies);
 });
 
