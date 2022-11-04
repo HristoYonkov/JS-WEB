@@ -1,8 +1,9 @@
-let isDone = false;
-let decimal = 5;
-let hex = 0xf00d;
-let binary = 0b1010;
-let octal = 0o744;
-let message = '';
-let messages = ['message1', 'message2'];
-let strictMessage = ['message1', 'message2'];
+var isDone = false;
+var decimal = 5;
+var hex = 0xf00d;
+var binary = 10;
+var octal = 484;
+var color = 'blue';
+color = 'red';
+var list = [1, 2, 3]; // Array from numbers
+var strictNumbers = [5, 'string']; //Array from 2 indexes a number 5 and some string

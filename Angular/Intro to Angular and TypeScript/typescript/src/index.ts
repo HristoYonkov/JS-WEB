@@ -5,7 +5,8 @@ let hex: number = 0xf00d;
 let binary: number = 0b1010;
 let octal: number = 0o744;
 
-let message: string = '';
+let color: string = 'blue';
+color = 'red';
 
-let messages: string[] = ['message1', 'message2'];
-let strictMessage: ['message1', 'message2'] = ['message1', 'message2'];
+let list: number[] = [1, 2, 3]; // Array from numbers
+let strictNumbers: [5, string] = [5, 'string']; //Array from 2 indexes a number 5 and some string
