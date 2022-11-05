@@ -1,9 +1,0 @@
-var isDone = false;
-var decimal = 5;
-var hex = 0xf00d;
-var binary = 10;
-var octal = 484;
-var color = 'blue';
-color = 'red';
-var list = [1, 2, 3]; // Array from numbers
-var strictNumbers = [5, 'string']; //Array from 2 indexes a number 5 and some string
