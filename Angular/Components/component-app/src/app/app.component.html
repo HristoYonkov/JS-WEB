@@ -1,2 +1,11 @@
-<p class="title">APP COMPONENT</p>
+<p class="title">{{title}}</p>
+<!-- 
+    const tileInput = document.createElement('input')
+    const btn = document.createElement('button')
+    btn.addEventListener('click', ($event) => {
+        changeTitle(titleInput.value)
+    })
+-->
+<input #titleInput id="myInput" type="text">
+<button (click)="changeTitle(titleInput.value)">Change Title</button>
 <app-list></app-list>

@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 
+const myNumber = 1;
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
+
 export class ListComponent {
 
   users = [
@@ -22,12 +25,14 @@ export class ListComponent {
     }
   ];
 
+  myNumber = myNumber;
+
   ifLastName = false;
 
   constructor() { }
 
-  showLastName() {
+  showLastName(event: MouseEvent) {
+    console.log(event);
     this.ifLastName = !this.ifLastName;
   }
-
 }
