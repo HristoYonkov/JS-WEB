@@ -1,4 +1,7 @@
 <span>{{user.firstName}}</span>
 <span *ngIf="ifLastName"> - {{user.lastName}}</span>
-{{staticString}}
-{{staticNumber}}
+<button (click)="selectClick($event)">Select</button>
+<div>
+    {{staticString}}
+    {{staticNumber}}
+</div>

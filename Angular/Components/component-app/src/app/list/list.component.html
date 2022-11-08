@@ -3,9 +3,12 @@
     <ng-container *ngIf="!ifLastName">Show</ng-container>
     - Last Name
 </button>
+<div *ngIf="showIndex">
+    Selected index is {{userIndex}}
+</div>
 <ul id="list-container">
-    <li *ngFor="let user of users" class="list-item">
+    <li *ngFor="let user of users; let i = index" class="list-item">
         <!-- [staticNumber]="myNumber" -->
-       <app-list-item [user]='user' [ifLastName]="ifLastName" staticString=" - static! - " [staticNumber]="1"></app-list-item>
+       <app-list-item [user]='user' [ifLastName]="ifLastName" staticString=" - static! - " [staticNumber]="1" (click)="listItemClick(i)" (myCustomEvent)="customEventHandler($event)"></app-list-item>
     </li>
 </ul>
