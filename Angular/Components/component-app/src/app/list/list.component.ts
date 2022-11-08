@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
   users = [
     {
@@ -15,12 +15,19 @@ export class ListComponent implements OnInit {
     {
       firstName: 'Hristo',
       lastName: 'Yonkov'
+    },
+    {
+      firstName: 'Cecka',
+      lastName: 'Kolejkata'
     }
   ];
 
+  ifLastName = false;
+
   constructor() { }
 
-  ngOnInit(): void {
+  showLastName() {
+    this.ifLastName = !this.ifLastName;
   }
 
 }

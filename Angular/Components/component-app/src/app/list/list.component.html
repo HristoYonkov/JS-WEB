@@ -1,5 +1,10 @@
+<button (click)="showLastName()">
+    <ng-container *ngIf="ifLastName">Hide</ng-container>
+    <ng-container *ngIf="!ifLastName">Show</ng-container>
+    - Last Name
+</button>
 <div id="list-container">
     <div *ngFor="let user of users" class="list-item">
-        {{user.firstName}} - {{user.lastName}}
+        <span>{{user.firstName}}</span><span *ngIf="ifLastName"> - {{user.lastName}}</span>
     </div>
 </div>
