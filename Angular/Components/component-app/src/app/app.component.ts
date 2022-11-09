@@ -13,6 +13,5 @@ export class AppComponent {
     this.title = newTitle;
     let inputEl = document.getElementById('myInput');
     console.log(inputEl);
-    
   }
 }

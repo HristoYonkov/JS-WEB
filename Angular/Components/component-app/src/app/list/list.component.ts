@@ -52,8 +52,7 @@ export class ListComponent {
     }
 
     customEventHandler($event: ICustomEvent) {
-        console.log($event);
-        
+        console.log($event);    
     }
 
 }
