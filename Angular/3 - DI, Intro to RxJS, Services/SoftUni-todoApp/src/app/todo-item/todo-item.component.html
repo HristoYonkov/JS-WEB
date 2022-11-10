@@ -1,0 +1,8 @@
+<span>
+    {{todo.title}}
+</span>
+
+<button (click)="handleCompletion(todo)">
+    <span *ngIf="todo.isCompleted">Not Completed</span>
+    <span *ngIf="!todo.isCompleted">Completed</span>
+</button>
