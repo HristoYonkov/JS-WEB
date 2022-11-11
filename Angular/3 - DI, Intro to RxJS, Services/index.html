@@ -58,11 +58,12 @@
             detectChanges();
         }
 
-        _setTimeout(newHandler, timeout, ...args);
+        return _setTimeout(newHandler, timeout, ...args);
     }
 
     setTimeout(() => {
         contentValue = 'Changed from timeout!';
+        console.log('This timeout!');
     }, 3000);
 
     // Promise.resolve().then(() => {
