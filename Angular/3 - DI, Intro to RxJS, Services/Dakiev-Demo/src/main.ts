@@ -91,8 +91,16 @@ class Empoyee {
 
 injector.provide({ provide: Wallet, useClass: Wallet })
 injector.provide({ provide: amount, useValue: 2000 })
-injector.provide({ provide: state, useValue: {} })
+injector.provide({provide: state, useValue: {}})
+
+console.log(injector);
 
 const w = new Wallet(injector)
+console.log(w);
+console.log(injector);
+
 const p = new Person(injector)
+console.log(p);
+
 const e = new Empoyee(injector)
+console.log(e);
