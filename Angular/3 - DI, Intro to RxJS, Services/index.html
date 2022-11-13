@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="content"> Initial Value </div>
+
+    <button id="change-content-btn"> Change Content</button>
+
+</body>
+
+<script>
+    let contentValue = 'Hello World!';
+
+    detectChanges();
+
+    function detectChanges() {
+        const currentValue = document.getElementById('content').textContent;
+        if (currentValue !== contentValue) {
+            renderTemplate();
+        }
+    }
+
+    function renderTemplate() {
+        document.getElementById('content').textContent = contentValue;
+    }
+
+    document.getElementById('change-content-btn').addEventListener('click', () => {
+        contentValue = 'Hello from Button!';
+        detectChanges();
+    });
+
+    // const xhr = new XMLHttpRequest();
+    // xhr.addEventListener('load', function() {
+    //     const response = JSON.parse(this.responseText);
+    //     contentValue = response.title;
+    //     detectChanges();
+    // });
+
+    // xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+    // xhr.send();
+
+    const _setTimeout = setTimeout;
+
+    setTimeout = (handler, timeout, ...args) => {
+        console.log('Settimeout was Invoked!');
+
+        const newHandler = () => {
+            console.log('SetTimeout handler was Invoked!');
+            handler();
+            detectChanges();
+        }
+
+        return _setTimeout(newHandler, timeout, ...args);
+    }
+
+    setTimeout(() => {
+        contentValue = 'Changed from timeout!';
+        console.log('This timeout!');
+    }, 3000);
+
+    // Promise.resolve().then(() => {
+    //     contentValue = 'Changed form promise!';
+    //     detectChanges();
+    // });
+
+</script>
+
+</html>

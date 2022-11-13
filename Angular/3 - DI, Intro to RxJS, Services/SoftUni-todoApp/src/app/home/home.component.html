@@ -1,0 +1,7 @@
+<button (click)="markAsCompleted()">Mark All As Completed!</button>
+
+<div *ngFor="let item of todos">
+    <app-todo-item [todo]="item" 
+    (completeStateChange)="handleStateChange($event)">
+    </app-todo-item>
+</div>
