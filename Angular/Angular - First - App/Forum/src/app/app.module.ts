@@ -6,6 +6,7 @@ import { ThemeListComponent } from './theme-list/theme-list.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     imports: [
         BrowserModule,
         CoreModule,
-        HttpClientModule
+        HttpClientModule,
+        SharedModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,8 +1,10 @@
 import { IUser } from "./user";
 
 export interface ITheme {
-    themeName: String;
+    themeName: string;
     subscribers: string[];
     userId: IUser;
     posts: string[];
+    created_at: string;
+    createdAt: string;
 }
