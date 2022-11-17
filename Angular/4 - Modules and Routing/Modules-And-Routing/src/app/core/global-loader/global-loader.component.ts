@@ -9,6 +9,6 @@ import { GlobalLoaderService } from '../services/global-loader.service';
 export class GlobalLoaderComponent {
 
   constructor(public globalLoaderService: GlobalLoaderService) { }
-
+  
 
 }
