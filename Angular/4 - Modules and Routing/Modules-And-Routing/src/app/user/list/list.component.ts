@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalLoaderService } from 'src/app/core/services/global-loader.service';
 import { IUser } from 'src/app/shared/interfaces';
+import { Test } from 'src/app/test';
 import { UserService } from '../user.service';
 
 @Component({
@@ -14,8 +15,11 @@ export class ListComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private globalLoaderService: GlobalLoaderService
-  ) { }
+    private globalLoaderService: GlobalLoaderService,
+    private t: Test
+  ) {
+    (window as any).t2 = t;
+  }
 
   ngOnInit(): void {
     this.loadUsers();

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Test } from './user/user.module';
+import { Test } from './test';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'Modules-And-Routing';
 
   constructor (private t: Test) { 
-    console.log(this.t);
+    (window as any).t3 = t;
   }
 }
