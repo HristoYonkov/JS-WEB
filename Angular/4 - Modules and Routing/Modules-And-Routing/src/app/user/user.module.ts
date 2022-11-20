@@ -4,6 +4,7 @@ import { UserListComponent } from './list/list.component';
 import { Test } from '../test';
 import { UserDetailsComponent } from './details/details.component';
 import { RouterModule } from '@angular/router';
+import { UserResolver } from './user-details.resolver';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
                 component: UserListComponent
             },
             {
-                path: 'user/details',
+                path: 'user/details/:id',
+                resolve: {user: UserResolver},
                 component: UserDetailsComponent
             },
         ])
