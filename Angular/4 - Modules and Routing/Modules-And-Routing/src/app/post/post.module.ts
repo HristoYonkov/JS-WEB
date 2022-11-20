@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent } from './list/list.component';
+import { PostListComponent } from './list/list.component';
 import { Test } from '../test';
 
 
 
 @NgModule({
   declarations: [
-    ListComponent
+    PostListComponent
   ],
   providers: [
     Test // { provide: Test, useClass: Test }
@@ -16,7 +16,7 @@ import { Test } from '../test';
     CommonModule
   ],
   exports: [
-    ListComponent
+    PostListComponent
   ]
 })
 export class PostModule { }

@@ -1,12 +1,12 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent } from './list/list.component';
+import { UserListComponent } from './list/list.component';
 import { Test } from '../test';
 
 
 @NgModule({
     declarations: [
-        ListComponent
+        UserListComponent
     ],
     imports: [
         CommonModule
@@ -15,7 +15,7 @@ import { Test } from '../test';
     //     Test // { provide: Test, useClass: Test }
     // ],
     exports: [
-        ListComponent
+        UserListComponent
     ]
 })
 export class UserModule {
@@ -25,7 +25,8 @@ export class UserModule {
             providers: [
                 {
                     provide: 'test',
-                    useValue: config
+                    useValue: config,
+                    multi: true
                 }
             ]
         }
@@ -37,7 +38,8 @@ export class UserModule {
             providers: [
                 {
                     provide: 'some aditional providers',
-                    useValue: config
+                    useValue: config,
+                    multi: true
                 }
             ]
         }

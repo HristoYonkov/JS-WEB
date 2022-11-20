@@ -14,4 +14,5 @@ export class GlobalLoaderService {
   hideLoader() {
     this.title = null;
   }
+  
 }
