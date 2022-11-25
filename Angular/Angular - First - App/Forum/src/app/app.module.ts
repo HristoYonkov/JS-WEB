@@ -7,6 +7,8 @@ import { RecentPostsComponent } from './recent-posts/recent-posts.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     declarations: [
@@ -16,10 +18,12 @@ import { SharedModule } from './shared/shared.module';
         MainComponent,
     ],
     imports: [
+        AppRoutingModule,
         BrowserModule,
         CoreModule,
         HttpClientModule,
-        SharedModule
+        SharedModule,
+        AuthModule
     ],
     providers: [],
     bootstrap: [AppComponent]
