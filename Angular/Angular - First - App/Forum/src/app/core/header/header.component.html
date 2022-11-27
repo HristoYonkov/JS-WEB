@@ -49,7 +49,7 @@
             <ng-template #loggedInTemplate>
                 <ul>
                     <li>
-                        <a routerLink="/auth/profile"> {{user?.username}}'s Profile</a>
+                        <a routerLink="/auth/profile">{{user?.username}}'s Profile</a>
                     </li>
                     <li>
                         <a routerLink="/auth/logout">Logout</a>
@@ -63,13 +63,13 @@
     <nav>
         <ul>
             <li>
-                <a href="#">Home</a>
+                <a routerLink="/">Home</a>
             </li>
             <li>
-                <a href="#">Themes</a>
+                <a routerLink="/theme/recent">Themes</a>
             </li>
             <li>
-                <a href="#">New Theme</a>
+                <a routerLink="/theme/new">New Theme</a>
             </li>
         </ul>
     </nav>

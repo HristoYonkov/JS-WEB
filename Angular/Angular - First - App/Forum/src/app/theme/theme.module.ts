@@ -22,8 +22,8 @@ import { RecentPostsComponent } from './recent-posts/recent-posts.component'
     ],
     imports: [
       CommonModule,
-      ThemeRoutingModule,
-      SharedModule
+      SharedModule,
+      ThemeRoutingModule
     ]
 })
 export class ThemeModule { }

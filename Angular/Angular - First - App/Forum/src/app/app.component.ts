@@ -10,7 +10,7 @@ import { filter, map } from 'rxjs';
 })
 export class AppComponent {
   title = 'Forum';
-
+  showMyClass = false;
   constructor(
     private router: Router,
     private pageTitle: Title
@@ -22,5 +22,9 @@ export class AppComponent {
     ).subscribe((pageTitle) => {
       this.pageTitle.setTitle(pageTitle);
     });
+  }
+
+  toggleMyClass() {
+    this.showMyClass = !this.showMyClass;
   }
 }
