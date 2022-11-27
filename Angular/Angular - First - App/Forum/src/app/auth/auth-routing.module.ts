@@ -7,20 +7,57 @@ import { RegisterComponent } from "./register/register.component";
 const routes: Routes = [
     {
         path: 'auth/login',
-        component: LoginComponent
+        component: LoginComponent,
+        data: {
+            title: 'Login'
+        }
     },
     {
         path: 'auth/register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        data: {
+            title: 'Register'
+        }
     },
     {
         path: 'auth/logout',
-        component: LogoutComponent
+        component: LogoutComponent,
+        data: {
+            title: 'Logout'
+        }
     },
     {
         path: 'auth/profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        data: {
+            title: 'Profile'
+        }
     }
 ];
+
+// const sameRoutes: Routes = [
+//     {
+//         path: 'auth',
+//         // ---- Guard friendly way !!!
+//         children: [
+//             {
+//                 path: 'login',
+//                 component: LoginComponent
+//             },
+//             {
+//                 path: 'register',
+//                 component: RegisterComponent
+//             },
+//             {
+//                 path: 'logout',
+//                 component: LogoutComponent
+//             },
+//             {
+//                 path: 'profile',
+//                 component: ProfileComponent
+//             }
+//         ]
+//     }
+// ];
 
 export const AuthRoutingModule = RouterModule.forChild(routes);

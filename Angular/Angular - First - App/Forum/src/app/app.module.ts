@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from "./core/core.module";
 import { AppComponent } from './app.component';
-import { RecentPostsComponent } from './recent-posts/recent-posts.component';
-import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
@@ -12,9 +10,7 @@ import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        RecentPostsComponent,
-        MainComponent,
+        AppComponent
     ],
     imports: [
         AuthModule,
@@ -23,7 +19,7 @@ import { ThemeModule } from './theme/theme.module';
         BrowserModule,
         CoreModule,
         HttpClientModule,
-        SharedModule,
+        SharedModule
     ],
     providers: [],
     bootstrap: [AppComponent]

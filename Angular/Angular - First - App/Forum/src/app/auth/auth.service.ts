@@ -8,7 +8,7 @@ export class AuthService {
 
   username: IUser | null = null;
 
-  get isLogegdIn() {
+  get isLoggedIn() {
     return this.username !== null;
   }
 
