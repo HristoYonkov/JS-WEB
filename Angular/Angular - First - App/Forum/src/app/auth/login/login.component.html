@@ -1,35 +1,40 @@
-<form class="login" action="" method="post">
+<form #form="ngForm" class="login">
 
     <fieldset>
         <h2>Login Form</h2>
 
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-            <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+            <input ngModel #emailInput="ngModel" required [appEmail]="['bg', 'com']" class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
         </p>
-        <p class="error">
-            Email is required!
-        </p>
-        <!-- <p class="error">
+        <!-- <input #files type="file" ngModel required> -->
+        <ng-container *ngIf="emailInput.touched">
+            <p class="error" *ngIf="emailInput.errors?.['required']">
+                Email is required!
+            </p>
+            <p class="error" *ngIf="emailInput.errors?.['appEmailValidator']">
                 Email is not valid!
-            </p> -->
+            </p>
+        </ng-container>
 
         <p class="field field-icon">
             <label for="password"><span><i class="fas fa-lock"></i></span></label>
-            <input type="password" name="password" id="password" placeholder="******">
+            <input ngModel #passwordInput="ngModel" required [minlength]="5" type="password" name="password" id="password" placeholder="******">
         </p>
-        <!-- <p class="error">
+        <ng-container *ngIf="passwordInput.touched">
+            <p class="error" *ngIf="passwordInput.errors?.['required']">
                 Password is required!
             </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
+            <p class="error" *ngIf="passwordInput.errors?.['minlength']">
+                Password must be at least 5 characters!
+            </p>
+        </ng-container>
 
-        <button (click)="loginHandler()">Login</button>
+        <button [disabled]="form.invalid">Login</button>
 
         <p class="text-center">
             Have an account?
-            <a href="#">Register</a>
+            <a href="/auth/register">Register</a>
         </p>
 
     </fieldset>
