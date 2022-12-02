@@ -5,7 +5,7 @@
 
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-            <input ngModel #emailInput="ngModel" required [appEmail]="['bg', 'com']" class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+            <input ngModel #emailInput="ngModel" required [appEmail]="appEmailDomains" class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
         </p>
         <!-- <input #files type="file" ngModel required> -->
         <ng-container *ngIf="emailInput.touched">

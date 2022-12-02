@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { appEmailDomains } from 'src/app/shared/constsnts';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  appEmailDomains = appEmailDomains;
 
   @ViewChild(
     // 'form',
