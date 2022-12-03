@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { appEmailDomains } from 'src/app/shared/constsnts';
+import { appEmailDomains } from 'src/app/shared/constants';
 import { AuthService } from '../auth.service';
 
 @Component({

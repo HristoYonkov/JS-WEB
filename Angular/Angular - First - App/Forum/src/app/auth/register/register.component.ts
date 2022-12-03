@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { appEmailDomains } from 'src/app/shared/constsnts';
+import { appEmailDomains } from 'src/app/shared/constants';
 import { appEmailValidator, sameValueGroupValidator } from 'src/app/shared/validators';
 
 @Component({

@@ -7,6 +7,7 @@ import { SharedModule } from "../shared/shared.module";
 import { ThemeDetailsComponent } from './theme-details/theme-details.component';
 import { MainComponent } from './main/main.component'
 import { RecentPostsComponent } from './recent-posts/recent-posts.component'
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { RecentPostsComponent } from './recent-posts/recent-posts.component'
     imports: [
       CommonModule,
       SharedModule,
+      FormsModule,
       ThemeRoutingModule
     ]
 })
