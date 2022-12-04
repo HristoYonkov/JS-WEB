@@ -1,2 +1,9 @@
 {{calcScores(obj)}}
+
+{{obj.scores | reduce : add : 1000}}
+
 <button (click)="addProp()">TEST!</button>
+
+{{myPromise | async}}
+
+{{$time | async | date : 'HH:mm:ss'}}
