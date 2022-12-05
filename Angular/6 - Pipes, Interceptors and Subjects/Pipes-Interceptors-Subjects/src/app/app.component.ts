@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { interval, map } from 'rxjs';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { interval, map, startWith } from 'rxjs';
+import { UserService } from './user.service';
 
 function add(a: number | string, b: number | string) {
     return (a) as any + (b) as any;
@@ -10,9 +11,9 @@ function add(a: number | string, b: number | string) {
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     // Default Change detection, (only if refferences are changed!) "'Default' is checking always"
-    changeDetection: ChangeDetectionStrategy.OnPush
+    // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     title = 'Pipes-Interceptors-Subjects';
 
     obj = {
@@ -25,6 +26,7 @@ export class AppComponent {
     private result = 0;
 
     $time = interval(1000).pipe(
+        startWith(null),
         map(() => new Date())
     );
 
@@ -32,7 +34,9 @@ export class AppComponent {
         setTimeout(() => {
             res('Hello World!')
         }, 3000)
-    })
+    });
+
+    constructor (private userService: UserService) {}
 
     calcScores(obj: { scores: number[] }) {
         if (this.scores !== obj.scores) {
@@ -48,4 +52,10 @@ export class AppComponent {
         this.obj.scores = this.obj.scores.concat(100);
     }
 
+    ngOnInit(): void {
+        this.userService.getUsers().subscribe({
+            next: (users) => console.log(users),
+            error: (err) => console.error(err)  
+        })
+    }
 }

@@ -1,9 +1,13 @@
-{{calcScores(obj)}}
-
+<!-- {{calcScores(obj)}}
 {{obj.scores | reduce : add : 1000}}
-
-<button (click)="addProp()">TEST!</button>
-
-{{myPromise | async}}
+<button (click)="addProp()">TEST!</button> -->
+<!-- {{myPromise | async}} -->
 
 {{$time | async | date : 'HH:mm:ss'}}
+
+<nav>
+    <a routerLink="/">HOME</a>
+    -
+    <a routerLink="/lazy">Lazy</a>
+</nav>
+<router-outlet></router-outlet>
