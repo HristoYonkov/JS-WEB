@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { interval, map, startWith } from 'rxjs';
 import { UserService } from './user.service';
 
@@ -13,7 +13,7 @@ function add(a: number | string, b: number | string) {
     // Default Change detection, (only if refferences are changed!) "'Default' is checking always"
     // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'Pipes-Interceptors-Subjects';
 
     obj = {
@@ -36,6 +36,9 @@ export class AppComponent implements OnInit {
         }, 3000)
     });
 
+    user$ = this.userService.users$;
+    isLoadingUsers$ = this.userService.isLoading$;
+
     constructor (private userService: UserService) {}
 
     calcScores(obj: { scores: number[] }) {
@@ -50,6 +53,10 @@ export class AppComponent implements OnInit {
     addProp() {
         (this.obj as any)['test'] = 500;
         this.obj.scores = this.obj.scores.concat(100);
+    }
+
+    reloadUsers(): void {
+        this.userService.loadUsers();
     }
 
     ngOnInit(): void {

@@ -5,6 +5,11 @@
 
 {{$time | async | date : 'HH:mm:ss'}}
 
+<div *ngIf="isLoadingUsers$ | async">Loading...</div>
+<div *ngIf="!(isLoadingUsers$ | async)">{{user$ | async | json}}</div>
+<button *ngIf="(user$ | async) === null" (click)="reloadUsers()">Load Users</button>
+<button *ngIf="(user$ | async) !== null" (click)="reloadUsers()">Reload Users</button>
+
 <nav>
     <a routerLink="/">HOME</a>
     -
